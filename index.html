@@ -3,457 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#06130d">
-<title>LUCKY10 | Investor Preview</title>
-
+<title>LUCKY10 - Home</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
- background:#06120d;
- color:#fff;
- font-family:Arial,Helvetica,sans-serif;
-}
-:root{--gold:#e9c66e;--green:#143d28;--light:#c9dfcf}
-.preview{
- background:#47391b;
- color:#ffe8a4;
- text-align:center;
- padding:9px;
- font-size:11px;
- letter-spacing:1.5px;
+font-family:Arial,sans-serif;
+background:linear-gradient(145deg,#06172d,#173d69,#07182d);
+color:white;min-height:100vh;
 }
 header{
- padding:25px 15px;
- text-align:center;
- background:radial-gradient(ellipse at top,#235337,#07130d 75%);
- border-bottom:1px solid #8c7137;
+padding:22px 15px;text-align:center;
+background:linear-gradient(120deg,#102b4b,#315b83,#10213b);
+border-bottom:2px solid #d9b45b;
 }
 .logo{
- font-size:43px;
- font-weight:900;
- letter-spacing:4px;
- color:#f3d47c;
- text-shadow:0 0 15px #b78b30;
+font-size:38px;font-weight:900;letter-spacing:3px;
+background:linear-gradient(#fff8d4,#e8bd54,#fff0a8);
+-webkit-background-clip:text;color:transparent;
+text-shadow:0 2px 15px #d7a63855;
 }
-.logo span{color:#fff}
-.tag{
- color:#d2b86e;
- font-size:11px;
- letter-spacing:5px;
- margin-top:7px;
-}
+.tag{color:#dcecff;font-size:12px;margin-top:6px}
 nav{
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:20px;
- padding:17px 8px;
- background:#0c2015;
- border-bottom:1px solid #314b34;
+display:flex;justify-content:center;flex-wrap:wrap;
+gap:9px;padding:14px 8px;background:#091c32;
 }
 nav a{
- color:#ead69b;
- text-decoration:none;
- font-size:12px;
+color:#f4d98b;text-decoration:none;font-size:12px;
+padding:9px 12px;border:1px solid #92763c;
+border-radius:7px;
 }
-nav a:hover{color:white}
-.container{max-width:1100px;margin:auto;padding:20px}
+.container{max-width:650px;margin:auto;padding:16px}
 .hero{
- text-align:center;
- padding:65px 15px 45px;
- background:radial-gradient(ellipse at top,#24573a,#07130d 70%);
+text-align:center;padding:25px 12px;
+border:1px solid #d8b65c;border-radius:15px;
+background:linear-gradient(140deg,#244c75,#10243e);
+box-shadow:0 5px 22px #0008;
 }
-.hero h1{
- font-size:clamp(30px,6vw,52px);
- color:var(--gold);
- margin-bottom:15px;
- text-shadow:0 0 20px #98752c;
+.hero h2{color:#ffe29a;font-size:23px}
+.hero p{color:#d9e9ff;margin-top:10px;font-size:13px}
+.count{
+margin:20px 0;padding:20px;text-align:center;
+border-radius:12px;background:linear-gradient(120deg,#f8e6a9,#c99437);
+color:#14263b;
 }
-.hero p{color:#c4d5c7;line-height:1.8}
-.pill{
- display:inline-block;
- border:1px solid #9c813e;
- color:#f4d681;
- border-radius:30px;
- padding:8px 16px;
- font-size:11px;
- margin-bottom:20px;
-}
-.stats{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:12px;
- max-width:850px;
- margin:30px auto 0;
-}
-.stat{
- background:linear-gradient(145deg,#173d29,#0b1b12);
- border:1px solid #766334;
- padding:22px 8px;
- border-radius:13px;
-}
-.stat strong{
- display:block;
- color:var(--gold);
- font-size:27px;
- margin-bottom:7px;
-}
-.stat small{color:#c5d4c8}
-.section{padding:48px 15px}
+.count strong{display:block;font-size:34px}
+.count span{font-size:13px}
 .section-title{
- text-align:center;
- color:var(--gold);
- font-size:27px;
- margin-bottom:12px;
-}
-.subtitle{
- text-align:center;
- color:#aebeb2;
- font-size:13px;
- margin-bottom:30px;
- line-height:1.7;
-}
-.panel{
- background:linear-gradient(145deg,#153923,#0a1b11);
- border:1px solid #705d32;
- border-radius:15px;
- padding:25px;
- max-width:850px;
- margin:20px auto;
-}
-.panel h3{color:var(--gold);margin-bottom:15px}
-.ticket-info{
- display:flex;
- justify-content:space-around;
- flex-wrap:wrap;
- gap:15px;
- text-align:center;
-}
-.ticket-info strong{
- display:block;
- font-size:26px;
- color:var(--gold);
- margin-bottom:5px;
-}
-.ticket-info small{color:#b9cabb}
-.ticket-grid{
- display:grid;
- grid-template-columns:repeat(10,1fr);
- gap:6px;
- max-width:850px;
- margin:20px auto;
-}
-.ticket{
- background:#173c29;
- border:1px solid #4b704c;
- border-radius:5px;
- color:#e9d28f;
- padding:9px 1px;
- text-align:center;
- font-size:11px;
-}
-.ticket:nth-child(5n){border-color:#b59a51}
-.notice{
- text-align:center;
- color:#d8c58a;
- font-size:12px;
- margin-top:18px;
-}
-.cards{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
- gap:15px;
- max-width:950px;
- margin:auto;
+color:#ffdf91;font-size:18px;
+margin:23px 0 12px;
 }
 .card{
- background:linear-gradient(145deg,#173d29,#0b1c12);
- border:1px solid #66572f;
- padding:23px;
- border-radius:13px;
+padding:17px;margin-bottom:12px;
+border:1px solid #6e91b4;border-radius:12px;
+background:linear-gradient(130deg,#193c60,#10243d);
 }
-.card .symbol{font-size:27px;margin-bottom:12px}
-.card h3{color:var(--gold);margin-bottom:12px}
-.card p{color:#b8c8ba;font-size:13px;line-height:1.8}
-.table-wrap{overflow-x:auto}
-table{
- width:100%;
- border-collapse:collapse;
- min-width:400px;
+.card h3{color:#ffe1a0;font-size:16px;margin-bottom:8px}
+.card p{color:#d8e6f5;font-size:13px;line-height:1.7}
+.options{
+display:grid;grid-template-columns:1fr 1fr;gap:12px;
 }
-th,td{
- border-bottom:1px solid #405b43;
- padding:15px 10px;
- text-align:left;
- font-size:13px;
+.option{
+text-align:center;padding:19px 8px;
+border:1px solid #c4a35a;border-radius:10px;
+background:#173554;color:#ffe6a6;
+font-size:14px;
 }
-th{color:var(--gold)}
-td{color:#d0ded3}
-.sample{color:#e6ca79;font-size:10px}
-.rules{
- max-width:800px;
- margin:auto;
-}
-.rules p{
- color:#c5d4c8;
- padding:13px 5px;
- border-bottom:1px solid #293d2c;
- font-size:13px;
- line-height:1.7;
-}
-.investor{
- text-align:center;
- background:radial-gradient(ellipse at top,#204b30,#09150d);
- border:1px solid #9b8140;
- border-radius:17px;
- max-width:850px;
- margin:auto;
- padding:35px 20px;
-}
-.investor h2{color:var(--gold);margin-bottom:15px}
-.investor p{color:#c6d6c9;line-height:1.9;font-size:14px}
 footer{
- text-align:center;
- padding:30px 15px;
- background:#030a06;
- border-top:1px solid #594b2b;
- color:#aab9ad;
- font-size:11px;
- line-height:2;
-}
-footer strong{color:var(--gold)}
-@media(max-width:600px){
- .logo{font-size:35px}
- nav{gap:13px}
- nav a{font-size:11px}
- .stats{grid-template-columns:1fr 1fr}
- .ticket-grid{grid-template-columns:repeat(5,1fr)}
- .ticket{padding:10px 1px}
- .section{padding:35px 12px}
+text-align:center;padding:25px 10px;
+color:#aebfd1;font-size:12px;
+border-top:1px solid #45617d;margin-top:20px;
 }
 </style>
 </head>
-
 <body>
 
-<div class="preview">
-  OFFICIAL PROJECT PRESENTATION • INVESTOR PREVIEW • NOT FOR SALE
-</div>
-
 <header>
- <div class="logo">LUCKY<span>10</span></div>
- <div class="tag">PREMIUM DIGITAL PLATFORM</div>
+<div class="logo">✦ LUCKY10 ✦</div>
+<div class="tag">YOUR LUCK • YOUR MOMENT</div>
 </header>
 
 <nav>
- <a href="#home">HOME</a>
- <a href="#tickets">TICKETS</a>
- <a href="#process">HOW IT WORKS</a>
- <a href="#winners">WINNERS</a>
- <a href="#rules">RULES</a>
- <a href="#investor">INVESTOR</a>
+<a href="#home">Home</a>
+<a href="#tickets">Tickets</a>
+<a href="#history">My Tickets</a>
+<a href="#results">Results</a>
+<a href="#winners">Winners</a>
 </nav>
 
-<section class="hero" id="home">
- <div class="pill">PROJECT CONCEPT PRESENTATION</div>
- <h1>WELCOME TO LUCKY10</h1>
- <p>
-  A premium digital platform concept.<br>
-  Simple Design. Transparent Information. Secure Architecture.
- </p>
+<div class="container" id="home">
 
- <div class="stats">
-  <div class="stat">
-   <strong>1,000</strong>
-   <small>Proposed Tickets</small>
-  </div>
-  <div class="stat">
-   <strong>₹10</strong>
-   <small>Proposed Ticket Price</small>
-  </div>
-  <div class="stat">
-   <strong>01</strong>
-   <small>Platform Concept</small>
-  </div>
- </div>
-</section>
+<div class="hero">
+<h2>WELCOME TO LUCKY10</h2>
+<p>Welcome! Explore tickets, results and winner information.</p>
+</div>
 
-<section class="section" id="tickets">
- <h2 class="section-title">TICKET OVERVIEW</h2>
- <p class="subtitle">
-  Proposed ticket numbering layout for investor presentation.
- </p>
+<div class="count">
+<strong>545</strong>
+<span>DEMO TICKETS PURCHASED</span>
+</div>
 
- <div class="panel">
-  <div class="ticket-info">
-   <div>
-    <strong>1,000</strong>
-    <small>Total Proposed Tickets</small>
-   </div>
-   <div>
-    <strong>0001–1000</strong>
-    <small>Number Range</small>
-   </div>
-   <div>
-    <strong>₹10</strong>
-    <small>Proposed Price</small>
-   </div>
-  </div>
- </div>
+<h2 class="section-title" id="tickets">🎟 Ticket Details</h2>
+<div class="card">
+<h3>LUCKY10 TICKET</h3>
+<p>Ticket Price: ₹10 (Demo)</p>
+<p>Ticket Status: Demo Preview</p>
+<p>Ticket Number: Not Assigned</p>
+</div>
 
- <div class="ticket-grid" id="ticketGrid"></div>
+<h2 class="section-title">✦ Quick Options</h2>
+<div class="options">
+<div class="option">🎟<br><br>My Tickets</div>
+<div class="option">📋<br><br>Purchase History</div>
+<div class="option">🏆<br><br>Winning Numbers</div>
+<div class="option">🥇<br><br>Winner List</div>
+</div>
 
- <p class="notice">
-  SAMPLE NUMBERING ONLY • NO TICKETS ARE AVAILABLE FOR PURCHASE
- </p>
-</section>
+<h2 class="section-title" id="history">📋 Purchase History</h2>
+<div class="card">
+<p>Your ticket history will appear here.</p>
+</div>
 
-<section class="section" id="process">
- <h2 class="section-title">HOW IT WORKS</h2>
- <p class="subtitle">Proposed platform workflow</p>
+<h2 class="section-title" id="results">🏆 Today's Results</h2>
+<div class="card">
+<h3>Result Information</h3>
+<p>Demo mode – No official results published.</p>
+</div>
 
- <div class="cards">
-  <div class="card">
-   <div class="symbol">👤</div>
-   <h3>User Registration</h3>
-   <p>Mobile number based account registration with OTP verification.</p>
-  </div>
-  <div class="card">
-   <div class="symbol">🎟️</div>
-   <h3>Ticket Management</h3>
-   <p>Unique ticket numbering and database-based ticket records.</p>
-  </div>
-  <div class="card">
-   <div class="symbol">🔐</div>
-   <h3>Secure Payments</h3>
-   <p>Proposed integration with an approved payment service provider.</p>
-  </div>
-  <div class="card">
-   <div class="symbol">🏆</div>
-   <h3>Winner Information</h3>
-   <p>Transparent result publication and historical winner records.</p>
-  </div>
- </div>
-</section>
+<h2 class="section-title" id="winners">🥇 Winner List</h2>
+<div class="card">
+<h3>Winner Details</h3>
+<p>Winner information will appear here after official result publication.</p>
+</div>
 
-<section class="section" id="winners">
- <h2 class="section-title">WINNER PREVIEW</h2>
- <p class="subtitle">Illustrative layout only. No actual winners or results.</p>
+<h2 class="section-title">📜 Customer Rules</h2>
+<div class="card">
+<p>Please read the official terms and conditions before participating.</p>
+</div>
 
- <div class="panel table-wrap">
-  <table>
-   <tr>
-    <th>Position</th>
-    <th>Winner</th>
-    <th>Ticket</th>
-    <th>Status</th>
-   </tr>
-   <tr>
-    <td>01</td>
-    <td>Sample Winner A</td>
-    <td>0001</td>
-    <td class="sample">SAMPLE</td>
-   </tr>
-   <tr>
-    <td>02</td>
-    <td>Sample Winner B</td>
-    <td>0025</td>
-    <td class="sample">SAMPLE</td>
-   </tr>
-   <tr>
-    <td>03</td>
-    <td>Sample Winner C</td>
-    <td>0100</td>
-    <td class="sample">SAMPLE</td>
-   </tr>
-  </table>
- </div>
-</section>
-
-<section class="section" id="rules">
- <h2 class="section-title">CUSTOMER INFORMATION</h2>
- <p class="subtitle">Proposed customer transparency principles</p>
-
- <div class="panel rules">
-  <p>01. All platform terms and eligibility conditions should be clearly displayed.</p>
-  <p>02. Ticket records and transaction records should be maintained securely.</p>
-  <p>03. Draw procedures and result verification should be transparent.</p>
-  <p>04. Customer privacy and personal information must be protected.</p>
-  <p>05. Customer support and complaint resolution facilities should be provided.</p>
-  <p>06. The platform will only operate after all applicable approvals and operational requirements are satisfied.</p>
- </div>
-</section>
-
-<section class="section">
- <h2 class="section-title">ADMIN DASHBOARD CONCEPT</h2>
- <p class="subtitle">Proposed management and monitoring system</p>
-
- <div class="cards">
-  <div class="card">
-   <div class="symbol">📊</div>
-   <h3>Dashboard</h3>
-   <p>Overview of platform activity and system information.</p>
-  </div>
-  <div class="card">
-   <div class="symbol">👥</div>
-   <h3>User Management</h3>
-   <p>Account records and authorized administration.</p>
-  </div>
-  <div class="card">
-   <div class="symbol">🗄️</div>
-   <h3>Database</h3>
-   <p>Centralized records with access restrictions.</p>
-  </div>
-  <div class="card">
-   <div class="symbol">💾</div>
-   <h3>Backup & Reports</h3>
-   <p>Automated backup concept and monthly Excel reports.</p>
-  </div>
- </div>
-</section>
-
-<section class="section" id="investor">
- <div class="investor">
-  <h2>INVESTOR PRESENTATION</h2>
-  <p>
-   LUCKY10 is a proposed digital platform project
-   designed around a structured user interface,
-   centralized data management, security and transparency.
-  </p>
-  <br>
-  <p>
-   <strong>Project Stage:</strong> Concept & Development Planning<br>
-   <strong>Platform:</strong> Web Based<br>
-   <strong>Proposed Capacity:</strong> 1,000 Tickets
-  </p>
-  <br>
-  <p>
-   This presentation is illustrative only.
-   No operational sales, payments or draws are enabled.
-  </p>
- </div>
-</section>
+</div>
 
 <footer>
- <strong>LUCKY10</strong><br>
- PREMIUM DIGITAL PLATFORM CONCEPT<br>
- © 2026 LUCKY10. ALL RIGHTS RESERVED.<br>
- INVESTOR PREVIEW • NOT A LIVE TICKET SALES WEBSITE
+© 2026 LUCKY10. All Rights Reserved.
+<br><br>Customer Homepage • Demo Version
 </footer>
-
-<script>
-const grid=document.getElementById("ticketGrid");
-const fragment=document.createDocumentFragment();
-
-for(let i=1;i<=1000;i++){
- const item=document.createElement("div");
- item.className="ticket";
- item.textContent=String(i).padStart(4,"0");
- fragment.appendChild(item);
-}
-grid.appendChild(fragment);
-</script>
 
 </body>
 </html>
