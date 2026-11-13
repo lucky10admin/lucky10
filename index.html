@@ -1,151 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUCKY10 - Home</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-font-family:Arial,sans-serif;
-background:linear-gradient(145deg,#06172d,#173d69,#07182d);
-color:white;min-height:100vh;
-}
-header{
-padding:22px 15px;text-align:center;
-background:linear-gradient(120deg,#102b4b,#315b83,#10213b);
-border-bottom:2px solid #d9b45b;
-}
-.logo{
-font-size:38px;font-weight:900;letter-spacing:3px;
-background:linear-gradient(#fff8d4,#e8bd54,#fff0a8);
--webkit-background-clip:text;color:transparent;
-text-shadow:0 2px 15px #d7a63855;
-}
-.tag{color:#dcecff;font-size:12px;margin-top:6px}
-nav{
-display:flex;justify-content:center;flex-wrap:wrap;
-gap:9px;padding:14px 8px;background:#091c32;
-}
-nav a{
-color:#f4d98b;text-decoration:none;font-size:12px;
-padding:9px 12px;border:1px solid #92763c;
-border-radius:7px;
-}
-.container{max-width:650px;margin:auto;padding:16px}
-.hero{
-text-align:center;padding:25px 12px;
-border:1px solid #d8b65c;border-radius:15px;
-background:linear-gradient(140deg,#244c75,#10243e);
-box-shadow:0 5px 22px #0008;
-}
-.hero h2{color:#ffe29a;font-size:23px}
-.hero p{color:#d9e9ff;margin-top:10px;font-size:13px}
-.count{
-margin:20px 0;padding:20px;text-align:center;
-border-radius:12px;background:linear-gradient(120deg,#f8e6a9,#c99437);
-color:#14263b;
-}
-.count strong{display:block;font-size:34px}
-.count span{font-size:13px}
-.section-title{
-color:#ffdf91;font-size:18px;
-margin:23px 0 12px;
-}
-.card{
-padding:17px;margin-bottom:12px;
-border:1px solid #6e91b4;border-radius:12px;
-background:linear-gradient(130deg,#193c60,#10243d);
-}
-.card h3{color:#ffe1a0;font-size:16px;margin-bottom:8px}
-.card p{color:#d8e6f5;font-size:13px;line-height:1.7}
-.options{
-display:grid;grid-template-columns:1fr 1fr;gap:12px;
-}
-.option{
-text-align:center;padding:19px 8px;
-border:1px solid #c4a35a;border-radius:10px;
-background:#173554;color:#ffe6a6;
-font-size:14px;
-}
-footer{
-text-align:center;padding:25px 10px;
-color:#aebfd1;font-size:12px;
-border-top:1px solid #45617d;margin-top:20px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky 10 Jackpot</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0d0f17;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="flex justify-center items-center min-h-screen p-4">
 
-<header>
-<div class="logo">✦ LUCKY10 ✦</div>
-<div class="tag">YOUR LUCK • YOUR MOMENT</div>
-</header>
-
-<nav>
-<a href="#home">Home</a>
-<a href="#tickets">Tickets</a>
-<a href="#history">My Tickets</a>
-<a href="#results">Results</a>
-<a href="#winners">Winners</a>
-</nav>
-
-<div class="container" id="home">
-
-<div class="hero">
-<h2>WELCOME TO LUCKY10</h2>
-<p>Welcome! Explore tickets, results and winner information.</p>
-</div>
-
-<div class="count">
-<strong>545</strong>
-<span>DEMO TICKETS PURCHASED</span>
-</div>
-
-<h2 class="section-title" id="tickets">🎟 Ticket Details</h2>
-<div class="card">
-<h3>LUCKY10 TICKET</h3>
-<p>Ticket Price: ₹10 (Demo)</p>
-<p>Ticket Status: Demo Preview</p>
-<p>Ticket Number: Not Assigned</p>
-</div>
-
-<h2 class="section-title">✦ Quick Options</h2>
-<div class="options">
-<div class="option">🎟<br><br>My Tickets</div>
-<div class="option">📋<br><br>Purchase History</div>
-<div class="option">🏆<br><br>Winning Numbers</div>
-<div class="option">🥇<br><br>Winner List</div>
-</div>
-
-<h2 class="section-title" id="history">📋 Purchase History</h2>
-<div class="card">
-<p>Your ticket history will appear here.</p>
-</div>
-
-<h2 class="section-title" id="results">🏆 Today's Results</h2>
-<div class="card">
-<h3>Result Information</h3>
-<p>Demo mode – No official results published.</p>
-</div>
-
-<h2 class="section-title" id="winners">🥇 Winner List</h2>
-<div class="card">
-<h3>Winner Details</h3>
-<p>Winner information will appear here after official result publication.</p>
-</div>
-
-<h2 class="section-title">📜 Customer Rules</h2>
-<div class="card">
-<p>Please read the official terms and conditions before participating.</p>
-</div>
-
-</div>
-
-<footer>
-© 2026 LUCKY10. All Rights Reserved.
-<br><br>Customer Homepage • Demo Version
-</footer>
-
-</body>
-</html>
+    <!-- Main Container -->
+    <div class="w-full max-w-md bg-[#131622] border border-[#23293d] rounded-2xl p-5 shadow-2xl relative">
+        
+        <!-- Top Header -->
+        <div class="flex justify-between items-center mb-6">
+            <!-- Logo -->
