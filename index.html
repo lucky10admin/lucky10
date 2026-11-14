@@ -1,74 +1,436 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky 10 Jackpot</title>
-    <!-- Tailwind CSS & Icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            background: radial-gradient(circle at top, #1a1f35 0%, #090b10 100%);
-            color: #ffffff;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-        .glass-card {
-            background: rgba(25, 29, 45, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(250, 204, 21, 0.25);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUCKY10</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+ background:#080d1b;
+ color:#fff;
+ font-family:Arial,sans-serif;
+ min-height:100vh;
+}
+
+header{
+ background:linear-gradient(120deg,#080d1b,#111b32);
+ border-bottom:1px solid #a78335;
+ padding:20px 15px;
+ text-align:center;
+}
+
+.logo{
+ font-size:32px;
+ font-weight:900;
+ letter-spacing:3px;
+ color:#f8cf62;
+ text-shadow:0 0 15px #c99a35;
+}
+
+.logo span{color:white}
+
+nav{
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:22px;
+ padding:16px 5px;
+ background:#0c1427;
+ border-bottom:1px solid #29334b;
+}
+
+nav a{
+ color:#e8c66a;
+ text-decoration:none;
+ font-size:13px;
+ font-weight:bold;
+}
+
+.container{
+ max-width:650px;
+ margin:auto;
+ padding:18px 14px 35px;
+}
+
+.jackpot{
+ text-align:center;
+ padding:24px 10px;
+ border:1px solid #b38b38;
+ border-radius:15px;
+ background:linear-gradient(145deg,#17233d,#090e1d);
+ box-shadow:0 0 22px #b38b3825;
+}
+
+.jackpot h1{
+ color:#f8d36d;
+ font-size:27px;
+ letter-spacing:2px;
+ margin-bottom:18px;
+}
+
+.prize-label{
+ color:#c4cbd9;
+ font-size:13px;
+}
+
+.prize{
+ font-size:39px;
+ font-weight:bold;
+ color:#ffdc79;
+ margin:10px 0;
+ text-shadow:0 0 14px #d7a83d;
+}
+
+.session{
+ display:flex;
+ justify-content:space-around;
+ gap:10px;
+ margin-top:22px;
+}
+
+.session div{
+ flex:1;
+ background:#0b1326;
+ padding:13px 5px;
+ border:1px solid #37435c;
+ border-radius:10px;
+}
+
+.session small{
+ display:block;
+ color:#aeb9cd;
+ font-size:11px;
+ margin-bottom:8px;
+}
+
+.session strong{
+ color:#f5d174;
+ font-size:16px;
+}
+
+.stats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:9px;
+ margin:18px 0;
+}
+
+.stat{
+ background:#111d34;
+ border:1px solid #35415b;
+ border-radius:10px;
+ text-align:center;
+ padding:16px 5px;
+}
+
+.stat small{
+ display:block;
+ color:#b5bfd0;
+ font-size:11px;
+ margin-bottom:9px;
+}
+
+.stat strong{
+ color:#f5d174;
+ font-size:19px;
+}
+
+.ticket-box{
+ background:linear-gradient(145deg,#131f37,#0b1222);
+ border:1px solid #9b7936;
+ border-radius:14px;
+ padding:20px 14px;
+ text-align:center;
+}
+
+.ticket-box h2{
+ color:#f5d174;
+ font-size:20px;
+ margin-bottom:18px;
+}
+
+.ticket-tabs{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:8px;
+ margin-bottom:20px;
+}
+
+.ticket-tab{
+ background:#0a1222;
+ border:1px solid #64718a;
+ color:white;
+ padding:14px 3px;
+ border-radius:9px;
+ cursor:pointer;
+}
+
+.ticket-tab strong{
+ display:block;
+ font-size:20px;
+ color:#e6c36c;
+ margin-bottom:5px;
+}
+
+.ticket-tab small{
+ font-size:10px;
+ color:#bac3d1;
+}
+
+.ticket-tab.active{
+ background:linear-gradient(135deg,#f5d77e,#b78a32);
+ color:#111;
+ border-color:#ffe7a0;
+}
+
+.ticket-tab.active strong,
+.ticket-tab.active small{
+ color:#111;
+}
+
+.quantity-title{
+ color:#c7cedb;
+ font-size:13px;
+ margin-bottom:12px;
+}
+
+.quantity-buttons{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ gap:10px;
+ margin-bottom:17px;
+}
+
+.qty{
+ width:42px;
+ height:40px;
+ border-radius:8px;
+ border:1px solid #b18b3e;
+ background:#17233a;
+ color:#f5d174;
+ font-size:18px;
+ cursor:pointer;
+}
+
+#quantity{
+ width:65px;
+ text-align:center;
+ color:#fff;
+ font-size:22px;
+ font-weight:bold;
+}
+
+.multipliers{
+ display:flex;
+ justify-content:center;
+ gap:9px;
+ flex-wrap:wrap;
+ margin-bottom:20px;
+}
+
+.multipliers button{
+ background:#17243d;
+ color:#f4d278;
+ border:1px solid #66532e;
+ border-radius:7px;
+ padding:9px 13px;
+ cursor:pointer;
+}
+
+.total{
+ color:#fff;
+ font-size:17px;
+ margin-bottom:18px;
+}
+
+.total span{
+ color:#f5d174;
+ font-weight:bold;
+}
+
+.buy{
+ width:100%;
+ padding:17px;
+ border:none;
+ border-radius:10px;
+ background:linear-gradient(120deg,#ffe49a,#c18c28,#f7d16e);
+ color:#111;
+ font-size:19px;
+ font-weight:900;
+ letter-spacing:1px;
+ cursor:pointer;
+ box-shadow:0 0 18px #d5a74755;
+}
+
+.buy:active{transform:scale(.98)}
+
+.footer{
+ text-align:center;
+ padding:24px 10px;
+ color:#8792a7;
+ font-size:12px;
+}
+
+@media(max-width:380px){
+ .session strong{font-size:13px}
+ .prize{font-size:32px}
+ nav{gap:13px}
+ nav a{font-size:11px}
+}
+</style>
 </head>
-<body class="flex justify-center items-center min-h-screen p-3 sm:p-6">
 
-    <!-- Main App Container -->
-    <div class="w-full max-w-md glass-card rounded-3xl p-5 shadow-2xl relative overflow-hidden">
-        
-        <!-- Top Glow Effect -->
-        <div class="absolute -top-24 -left-24 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<body>
 
-        <!-- Top Header -->
-        <div class="flex justify-between items-center mb-5 relative z-10">
-            <div class="flex items-center space-x-2.5">
-                <span class="bg-gradient-to-br from-amber-300 to-yellow-500 text-black font-black px-3 py-1.5 rounded-xl text-sm shadow-lg">10</span>
-                <div>
-                    <h1 class="font-extrabold tracking-wider text-base leading-none text-white">LUCKY 10</h1>
-                    <span class="text-[10px] text-emerald-400 font-semibold tracking-wide flex items-center gap-1 mt-0.5">
-                        <i class="fa-solid fa-shield-halved"></i> PROVABLY FAIR
-                    </span>
-                </div>
-            </div>
+<header>
+ <div class="logo">LUCKY<span>10</span></div>
+</header>
 
-            <!-- Profile / Bot Icon (Wallet Removed) -->
-            <div class="flex items-center space-x-2">
-                <button class="bg-[#1c2133] border border-white/10 px-3.5 py-1.5 rounded-full flex items-center space-x-1.5 text-xs font-bold text-gray-200 hover:text-white transition">
-                    <i class="fa-solid fa-user text-amber-400"></i>
-                    <span>Profile</span>
-                </button>
-                <button class="bg-[#22c55e] text-black w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-lg transition transform active:scale-90">
-                    <i class="fa-solid fa-robot"></i>
-                </button>
-            </div>
-        </div>
+<nav>
+ <a href="#home">LIVE DRAW</a>
+ <a href="#winners">WINNERS</a>
+ <a href="#ranks">TOP RANKS</a>
+ <a href="#rules">RULES</a>
+</nav>
 
-        <!-- Navigation Tabs -->
-        <div class="grid grid-cols-4 gap-1.5 bg-[#111522]/80 p-1.5 rounded-2xl mb-5 text-center text-xs border border-white/5 relative z-10">
-            <button onclick="switchTab('live', this)" class="tab-btn bg-gradient-to-r from-amber-300 to-yellow-500 text-black font-bold py-2 rounded-xl shadow flex items-center justify-center space-x-1 transition">
-                <i class="fa-solid fa-bolt"></i>
-                <span>Live</span>
-            </button>
-            <button onclick="switchTab('winners', this)" class="tab-btn text-gray-400 py-2 rounded-xl flex items-center justify-center space-x-1 hover:text-white transition">
-                <i class="fa-solid fa-trophy"></i>
-                <span>Winners</span>
-            </button>
-            <button onclick="switchTab('ranks', this)" class="tab-btn text-gray-400 py-2 rounded-xl flex items-center justify-center space-x-1 hover:text-white transition">
-                <i class="fa-solid fa-crown"></i>
-                <span>Ranks</span>
-            </button>
-            <button onclick="switchTab('rules', this)" class="tab-btn text-gray-400 py-2 rounded-xl flex items-center justify-center space-x-1 hover
+<main class="container" id="home">
+
+ <section class="jackpot">
+  <h1>LUCKY10 JACKPOT</h1>
+
+  <div class="prize-label">TOTAL POOL PRIZE</div>
+  <div class="prize" id="poolPrize">₹0</div>
+
+  <div class="session">
+   <div>
+    <small>ROUND SESSION</small>
+    <strong>#001</strong>
+   </div>
+   <div>
+    <small>DRAW COUNTDOWN</small>
+    <strong id="countdown">00:00:00</strong>
+   </div>
+  </div>
+ </section>
+
+ <section class="stats">
+  <div class="stat">
+   <small>POOL TICKETS</small>
+   <strong id="poolTickets">0</strong>
+  </div>
+
+  <div class="stat">
+   <small>MY TICKETS</small>
+   <strong>0</strong>
+  </div>
+
+  <div class="stat">
+   <small>WIN CHANCE</small>
+   <strong id="chance">0%</strong>
+  </div>
+ </section>
+
+ <section class="ticket-box">
+  <h2>SELECT YOUR TICKET</h2>
+
+  <div class="ticket-tabs">
+
+   <button class="ticket-tab active" onclick="selectTicket(10,this)">
+    <strong>₹10</strong>
+    <small>1000 TICKETS</small>
+   </button>
+
+   <button class="ticket-tab" onclick="selectTicket(50,this)">
+    <strong>₹50</strong>
+    <small>200 TICKETS</small>
+   </button>
+
+   <button class="ticket-tab" onclick="selectTicket(100,this)">
+    <strong>₹100</strong>
+    <small>100 TICKETS</small>
+   </button>
+
+  </div>
+
+  <div class="quantity-title">SELECT QUANTITY</div>
+
+  <div class="quantity-buttons">
+   <button class="qty" onclick="changeQty(-1)">−</button>
+   <span id="quantity">1</span>
+   <button class="qty" onclick="changeQty(1)">+</button>
+  </div>
+
+  <div class="multipliers">
+   <button onclick="setQty(1)">1x</button>
+   <button onclick="setQty(5)">5x</button>
+   <button onclick="setQty(10)">10x</button>
+   <button onclick="setQty(25)">25x</button>
+  </div>
+
+  <div class="total">
+   TOTAL: <span id="total">₹10</span>
+  </div>
+
+  <button class="buy" onclick="buyNow()">
+   BUY NOW
+  </button>
+
+ </section>
+
+</main>
+
+<footer class="footer">
+ LUCKY10
+</footer>
+
+<script>
+let ticketPrice = 10;
+let quantity = 1;
+
+const limits = {
+ 10:1000,
+ 50:200,
+ 100:100
+};
+
+function update(){
+ document.getElementById("quantity").textContent=quantity;
+ document.getElementById("total").textContent=
+ "₹"+(ticketPrice*quantity);
+}
+
+function selectTicket(price,button){
+ ticketPrice=price;
+ quantity=1;
+
+ document.querySelectorAll(".ticket-tab")
+ .forEach(b=>b.classList.remove("active"));
+
+ button.classList.add("active");
+ update();
+}
+
+function changeQty(value){
+ quantity=Math.max(1,Math.min(limits[ticketPrice],quantity+value));
+ update();
+}
+
+function setQty(value){
+ quantity=Math.min(limits[ticketPrice],value);
+ update();
+}
+
+function buyNow(){
+ alert("Customer login and UPI payment setup will be connected in the next development stage.");
+}
+
+update();
+</script>
+
+</body>
+</html>
