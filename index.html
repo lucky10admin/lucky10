@@ -432,5 +432,41 @@ function buyNow(){
 update();
 </script>
 
+
+
+<!-- CUSTOMER LOGIN -->
+<section id="login" style="max-width:600px;margin:25px auto;padding:20px;background:#111d34;border:1px solid #b38b38;border-radius:14px;text-align:center;color:white;">
+<h2 style="color:#f5d174;margin-bottom:18px;">CUSTOMER LOGIN</h2>
+
+<input id="mobile" type="tel" maxlength="10" placeholder="Enter Mobile Number"
+style="width:100%;padding:15px;border-radius:8px;border:1px solid #b38b38;background:#080d1b;color:white;font-size:16px;">
+
+<button onclick="sendOTP()" style="width:100%;padding:14px;margin-top:15px;background:linear-gradient(120deg,#ffe49a,#c18c28);border:0;border-radius:8px;font-weight:bold;">
+SEND OTP
+</button>
+
+<div id="otpArea" style="display:none;margin-top:18px;">
+<input id="otp" type="text" maxlength="6" placeholder="Enter OTP"
+style="width:100%;padding:15px;border-radius:8px;background:#080d1b;color:white;border:1px solid #b38b38;">
+<button onclick="verifyOTP()" style="width:100%;padding:14px;margin-top:12px;background:#e8c66a;border:0;border-radius:8px;font-weight:bold;">
+VERIFY OTP
+</button>
+</div>
+<p id="loginMessage" style="margin-top:15px;color:#f5d174;"></p>
+</section>
+<script>
+function sendOTP(){
+ const mobile=document.getElementById("mobile").value;
+ if(!/^[6-9]\d{9}$/.test(mobile)){
+  document.getElementById("loginMessage").textContent="Enter a valid 10-digit mobile number.";
+  return;
+ }
+ document.getElementById("otpArea").style.display="block";
+ document.getElementById("loginMessage").textContent="Login interface ready. Real SMS OTP service is not connected yet.";
+}
+function verifyOTP(){
+ document.getElementById("loginMessage").textContent="Real OTP verification will be activated after backend integration.";
+}
+</script>
 </body>
-</html>
+ 
